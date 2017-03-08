@@ -10,5 +10,10 @@ class Globals
 public:
 	
 	static const float PI;
+
+	static bool debugging;
+
+	static int ScreenWidth, ScreenHeight, ScreenScale;
+	static SDL_Renderer* renderer;
 };
 
