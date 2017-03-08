@@ -74,6 +74,7 @@
   <ItemGroup>
     <ClInclude Include="cleanup.h" />
     <ClInclude Include="drawing_functions.h" />
+    <ClInclude Include="globals.h" />
     <ClInclude Include="randomNumber.h" />
     <ClInclude Include="res_path.h" />
   </ItemGroup>
