@@ -5,6 +5,9 @@
 #include <SDL.h>
 #include "randomNumber.h"
 
+using namespace std;
+
+
 class Globals
 {
 public:
@@ -15,5 +18,7 @@ public:
 
 	static int ScreenWidth, ScreenHeight, ScreenScale;
 	static SDL_Renderer* renderer;
+
+	static string clipOffDataHeader(string data);
 };
 

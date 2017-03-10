@@ -14,6 +14,8 @@ using namespace std;
 
 class Frame
 {
+public:
+
 	int frameNumber;
 	SDL_Rect clip;
 	float duration;
@@ -23,6 +25,6 @@ class Frame
 
 	void draw(SDL_Texture* spriteSheet, float x, float y);
 
-
+	void loadFrame(ifstream &file, list<DataGroupType> &groupTypes);
 };
 

@@ -72,9 +72,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="animation.h" />
+    <ClInclude Include="animationSet.h" />
     <ClInclude Include="cleanup.h" />
     <ClInclude Include="dataGroupType.h" />
     <ClInclude Include="drawing_functions.h" />
+    <ClInclude Include="entity.h" />
     <ClInclude Include="frame.h" />
     <ClInclude Include="globals.h" />
     <ClInclude Include="group.h" />
@@ -88,6 +91,8 @@
     <ClInclude Include="timeController.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="animation.cpp" />
+    <ClCompile Include="animationSet.cpp" />
     <ClCompile Include="cleanup.cpp" />
     <ClCompile Include="drawing_functions.cpp" />
     <ClCompile Include="frame.cpp" />
