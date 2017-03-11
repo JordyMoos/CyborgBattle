@@ -13,7 +13,7 @@ public:
 	static const int DIR_RIGHT = 1;
 	static const int DIR_DOWN = 2;
 	static const int DIR_LEFT = 3;
-	static const int DIR_NONE = 4;
+	static const int DIR_NONE = -1;
 
 	int state;
 
