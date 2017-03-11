@@ -122,5 +122,5 @@ Group* GroupBuilder::findGroupByName(string str, list<Group*> &groups){
 			return (*group);
 	}
 
-	return NULL;
+	return nullptr;
 }
