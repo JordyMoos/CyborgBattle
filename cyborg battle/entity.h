@@ -52,13 +52,13 @@ public:
 	virtual void changeAnimation(int newState, bool resetFrameToBeginning) = 0;
 	virtual void updateCollisions();
 
-	static float distanceBetweenTwoRects(SDL_Rect &lhs, SDL_Rect &rhs);
-	static float distanceBetweenTwoEntities(Entity *lhs, Entity *rhs);
-	static float angleBetweenTwoEntities(Entity *lhs, Entity *rhs);
-	static bool checkCollision(SDL_Rect &lhs, SDL_Rect &rhs);
+	static float distanceBetweenTwoRects(SDL_Rect &r1, SDL_Rect &r2);
+	static float distanceBetweenTwoEntities(Entity *e1, Entity *e2);
+	static float angleBetweenTwoEntities(Entity *e1, Entity *e2);
+	static bool checkCollision(SDL_Rect r1, SDL_Rect r2);
 	static int  angleToDirection(float angle);
 	static float angleBetweenTwoPoints(float cx1, float cy1, float cx2, float cy2);
-	static float angleBetweenTwoRects(SDL_Rect &lhs, SDL_Rect &rhs);
+	static float angleBetweenTwoRects(SDL_Rect &r1, SDL_Rect &r2);
 
 	static list<Entity*> entities;
 	static bool entityCompare(const Entity* const &lhs, const Entity* const &rhs);

@@ -95,6 +95,7 @@
     <ClCompile Include="animationSet.cpp" />
     <ClCompile Include="cleanup.cpp" />
     <ClCompile Include="drawing_functions.cpp" />
+    <ClCompile Include="entity.cpp" />
     <ClCompile Include="frame.cpp" />
     <ClCompile Include="globals.cpp" />
     <ClCompile Include="groupBuilder.cpp" />
