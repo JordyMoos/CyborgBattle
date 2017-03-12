@@ -84,6 +84,10 @@ void AnimationSet::loadAnimationSet(string fileName, list<DataGroupType> &groupT
 		}
 
 	}
+	else
+	{
+		printf("failed to open file %s", resPath + fileName);
+	}
 
 	file.close();
 }

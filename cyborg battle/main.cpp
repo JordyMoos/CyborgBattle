@@ -3,9 +3,15 @@
 #include "drawing_functions.h"
 #include "SDL_mixer.h"
 #include "globals.h"
+#include "game.h"
+#include <cstdlib>
+#include <ctime>
+
 
 int main(int argc, char **argv)
 {
+	srand(time(0));
+
 	// Setup SDL
 	if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
 	{
@@ -68,6 +74,7 @@ int main(int argc, char **argv)
 		return 6;
 	}
 
+	/*
 	// Load up a texture to draw
 	string resPath = getResourcePath();
 	SDL_Texture *texture = loadTexture(resPath + "map.png", Globals::renderer);
@@ -81,6 +88,11 @@ int main(int argc, char **argv)
 	}
 
 	cleanup(texture);
+	*/
+
+	Game game;
+	game.update();
+
 	cleanup(Globals::renderer);
 	cleanup(window);
 	SDL_Quit();

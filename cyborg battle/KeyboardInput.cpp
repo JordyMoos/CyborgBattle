@@ -20,8 +20,13 @@ void KeyboardInput::update(SDL_Event* e)
 		case SLASH:
 			hero->slash();
 			break;
+
+		case REVIVE:
+			hero->revive();
+			break;
 		}
 	}
+
 
 	// Check if key is held down
 	const Uint8* keyStates = SDL_GetKeyboardState(nullptr);

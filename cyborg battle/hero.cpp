@@ -30,7 +30,8 @@ Hero::Hero(AnimationSet *animationSet)
 	type = "hero";
 
 	x = Globals::ScreenWidth / 2;
-	x = Globals::ScreenHeight / 2;
+	y = Globals::ScreenHeight / 2;
+	invincibleTimer = 0;
 	moveSpeed = 0;
 	moveSpeedMax = 80;
 	hp = hpMax = 20;
@@ -103,6 +104,11 @@ void Hero::die()
 
 void Hero::revive()
 {
+	if (hp > 0)
+	{
+		return;
+	}
+
 	hp = hpMax;
 	moving = false;
 	changeAnimation(HERO_STATE_IDLE, true);
@@ -228,6 +234,11 @@ void Hero::updateAnimation()
 	if (state == HERO_STATE_MOVE && ! moving)
 	{
 		changeAnimation(HERO_STATE_IDLE, true);
+	}
+
+	if (state != HERO_STATE_MOVE && moving)
+	{
+		changeAnimation(HERO_STATE_MOVE, true);
 	}
 
 	frameTimer += TimeController::timeController.dT;

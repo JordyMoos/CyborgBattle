@@ -238,12 +238,8 @@ float Entity::distanceBetweenTwoEntities(Entity *e1, Entity *e2)
 
 float Entity::angleBetweenTwoEntities(Entity *e1, Entity *e2)
 {
-	float dx, dy;
-	float x1 = e1->x, y1 = e1->y;
-	float x2 = e2->x, y2 = e2->y;
-
-	dx = x2 - x1;
-	dy = y2 = y1;
+	float dx = e2->x - e1->x;
+	float dy = e2->y - e1->y;
 
 	return atan2(dy, dx) * 180 / Globals::PI;
 }
@@ -251,7 +247,9 @@ float Entity::angleBetweenTwoEntities(Entity *e1, Entity *e2)
 
 bool Entity::checkCollision(SDL_Rect r1, SDL_Rect r2)
 {
-	return SDL_IntersectRect(&r1, &r2, nullptr);
+	SDL_Rect intersectionRect;
+
+	return SDL_IntersectRect(&r1, &r2, &intersectionRect);
 }
 
 
@@ -287,11 +285,11 @@ float Entity::angleBetweenTwoPoints(float cx1, float cy1, float cx2, float cy2)
 
 float Entity::angleBetweenTwoRects(SDL_Rect &r1, SDL_Rect &r2)
 {
-	float cx1 = r1.x + r1.w / 2;
-	float cy1 = r1.y + r1.h / 2;
+	float cx1 = r1.x + (r1.w / 2);
+	float cy1 = r1.y + (r1.h / 2);
 
-	float cx2 = r2.x + r2.w / 2;
-	float cy2 = r2.y + r2.h / 2;
+	float cx2 = r2.x + (r2.w / 2);
+	float cy2 = r2.y + (r2.h / 2);
 
 	return angleBetweenTwoPoints(cx1, cy1, cx2, cy2);
 }

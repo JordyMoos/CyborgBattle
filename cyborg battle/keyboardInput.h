@@ -15,6 +15,7 @@ public:
 	static const SDL_Scancode LEFT = SDL_SCANCODE_LEFT;
 	static const SDL_Scancode SLASH = SDL_SCANCODE_Z;
 	static const SDL_Scancode DASH = SDL_SCANCODE_X;
+	static const SDL_Scancode REVIVE = SDL_SCANCODE_SPACE;
 
 	KeyboardInput();
 	void update(SDL_Event* e);
