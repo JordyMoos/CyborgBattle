@@ -6,6 +6,7 @@
 #include "glob.h"
 #include "keyboardInput.h"
 #include "drawing_functions.h"
+#include "soundManager.h"
 
 using namespace std;
 
@@ -13,6 +14,8 @@ using namespace std;
 class Game
 {
 public:
+	Mix_Music* song = nullptr;
+
 	AnimationSet* heroAnimationSet;
 	AnimationSet* globAnimationSet;
 	AnimationSet* wallAnimationSet;

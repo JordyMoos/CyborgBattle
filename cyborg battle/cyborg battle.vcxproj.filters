@@ -84,6 +84,9 @@
     <ClInclude Include="glob.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="soundManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="drawing_functions.cpp">
@@ -138,6 +141,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="glob.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="soundManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

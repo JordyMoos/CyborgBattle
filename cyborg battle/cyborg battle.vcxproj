@@ -93,6 +93,7 @@
     <ClInclude Include="livingEntity.h" />
     <ClInclude Include="randomNumber.h" />
     <ClInclude Include="res_path.h" />
+    <ClInclude Include="soundManager.h" />
     <ClInclude Include="timeController.h" />
     <ClInclude Include="wall.h" />
   </ItemGroup>
@@ -113,6 +114,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="randomNumber.cpp" />
     <ClCompile Include="res_path.cpp" />
+    <ClCompile Include="soundManager.cpp" />
     <ClCompile Include="timeController.cpp" />
     <ClCompile Include="wall.cpp" />
   </ItemGroup>

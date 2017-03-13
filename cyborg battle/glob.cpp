@@ -152,6 +152,8 @@ void Glob::attack()
 	slideAmount = 100;
 	slideAngle = angle;
 	changeAnimation(GLOB_STATE_ATTACK, true);
+
+	SoundManager::soundmanager.playSound("enemyDie");
 }
 
 
@@ -328,6 +330,8 @@ void Glob::updateDamages()
 					if (hp > 0)
 					{
 						invincibleTimer = 0.1;
+
+						SoundManager::soundmanager.playSound("enemyHit");
 					}
 
 					slideAngle = Entity::angleBetweenTwoEntities(entity, this);

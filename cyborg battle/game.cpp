@@ -12,6 +12,20 @@ Game::Game()
 	splashImage = loadTexture(resPath + "cyborgtitle.png", Globals::renderer);
 	overlayImage = loadTexture(resPath + "overlay.png", Globals::renderer);
 
+	// Load sounds
+	SoundManager::soundmanager.loadSound("hit", resPath + "Randomize2.wav");
+	SoundManager::soundmanager.loadSound("enemyHit", resPath + "Hit_Hurt9.wav");
+	SoundManager::soundmanager.loadSound("swing", resPath + "Randomize21.wav");
+	SoundManager::soundmanager.loadSound("dash", resPath + "dash.wav");
+	SoundManager::soundmanager.loadSound("growl", resPath + "Randomize34.wav");
+	SoundManager::soundmanager.loadSound("enemyDie", resPath + "Randomize41.wav");
+
+	song = Mix_LoadMUS((resPath + "Fatal Theory.wav").c_str());
+	if (song != nullptr)
+	{
+		Mix_PlayMusic(song, -1);
+	}
+
 	// Holds a list of group types
 	// Describing the types of groups of data our frame can have
 	list<DataGroupType> dataGroupTypes;
@@ -91,6 +105,12 @@ Game::Game()
 
 Game::~Game()
 {
+	Mix_PausedMusic();
+	if (song != nullptr)
+	{
+		Mix_FreeMusic(song);
+	}
+
 	cleanup(backgroundImage);
 	cleanup(splashImage);
 	cleanup(overlayImage);

@@ -3,6 +3,7 @@
 #include <string>
 #include "globals.h"
 #include "livingEntity.h"
+#include "soundManager.h"
 
 using namespace std;
 

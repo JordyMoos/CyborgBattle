@@ -2,6 +2,7 @@
 
 #include <cstdlib>
 #include "livingEntity.h"
+#include "soundManager.h"
 
 
 class Glob : public LivingEntity
