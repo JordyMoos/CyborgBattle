@@ -5,8 +5,13 @@
 
 Game::Game()
 {
+	splashShowing = true;
+	overlayTimer = 2;
+
 	string resPath = getResourcePath();
 	backgroundImage = loadTexture(resPath + "map.png", Globals::renderer);
+	splashImage = loadTexture(resPath + "cyborgtitle.png", Globals::renderer);
+	overlayImage = loadTexture(resPath + "overlay.png", Globals::renderer);
 
 	// Holds a list of group types
 	// Describing the types of groups of data our frame can have

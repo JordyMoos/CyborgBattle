@@ -18,12 +18,19 @@ public:
 	AnimationSet* wallAnimationSet;
 
 	SDL_Texture* backgroundImage;
+	SDL_Texture* splashImage;
+	SDL_Texture* overlayImage;
+
+	SDL_Texture* scoreTexture = nullptr;
 
 	Hero* hero;
 	KeyboardInput heroInput;
 
 	list<Entity*> enemies;
 	list<Entity*> walls;
+
+	bool splashShowing;
+	float overlayTimer;
 
 	Game();
 	~Game();

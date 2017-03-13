@@ -36,7 +36,14 @@ void LivingEntity::draw()
 {
 	if (active && currentFrame != nullptr)
 	{
-		currentFrame->draw(animationSet->spriteSheet, x, y);
+		if (invincibleTimer > 0 && animationSet->whiteSpriteSheet != nullptr)
+		{
+			currentFrame->draw(animationSet->whiteSpriteSheet, x, y);
+		}
+		else
+		{
+			currentFrame->draw(animationSet->spriteSheet, x, y);
+		}
 	}
 
 	if (Globals::debugging && solid)

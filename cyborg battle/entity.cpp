@@ -133,6 +133,8 @@ void Entity::updateCollisions()
 				: collisionBox.h / 4;
 
 			SDL_Rect sampleBox = lastCollisionBox;
+			float collisionMoveX = sampleBox.x;
+			float collisionMoveY = sampleBox.y;
 			float movementAngle = angleBetweenTwoRects(lastCollisionBox, collisionBox);
 
 			bool foundCollision = false;
@@ -187,11 +189,14 @@ void Entity::updateCollisions()
 				// Increment sample box more to the end
 				if (distanceBetweenTwoRects(sampleBox, collisionBox) > boxTravelSize)
 				{
+					movementAngle = Entity::angleBetweenTwoRects(sampleBox, collisionBox);
 					float xMove = boxTravelSize * cos(movementAngle * Globals::PI / 180);
 					float yMove = boxTravelSize * sin(movementAngle * Globals::PI / 180);
 
-					sampleBox.x += xMove;
-					sampleBox.y += yMove;
+					collisionMoveX += xMove;
+					collisionMoveY += yMove;
+					sampleBox.x = collisionMoveX;
+					sampleBox.y = collisionMoveY;
 				}
 				else
 				{

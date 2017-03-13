@@ -2,7 +2,7 @@
 
 const float Globals::PI = 3.14159;
 
-bool Globals::debugging = true;
+bool Globals::debugging = false;
 
 int Globals::ScreenWidth = 640;
 int Globals::ScreenHeight = 352;
