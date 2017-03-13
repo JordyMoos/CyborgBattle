@@ -20,10 +20,6 @@ void KeyboardInput::update(SDL_Event* e)
 		case SLASH:
 			hero->slash();
 			break;
-
-		case REVIVE:
-			hero->revive();
-			break;
 		}
 	}
 
