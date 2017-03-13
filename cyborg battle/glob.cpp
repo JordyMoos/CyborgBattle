@@ -87,7 +87,7 @@ void Glob::think()
 		thinkTimer -= TimeController::timeController.dT;
 		if (thinkTimer <= 0)
 		{
-			thinkTimer = rand() % 5; // 0-4 seconds
+			thinkTimer = rand() % 5;
 
 			int action = rand() % 10;
 			if (action < 3)

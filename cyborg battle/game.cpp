@@ -52,6 +52,9 @@ Game::Game()
 	globAnimationSet = new AnimationSet();
 	globAnimationSet->loadAnimationSet("glob.fdset", dataGroupTypes, true, 0, true);
 
+	grobAnimationSet = new AnimationSet();
+	grobAnimationSet->loadAnimationSet("grob.fdset", dataGroupTypes, true, 0, true);
+
 	wallAnimationSet = new AnimationSet();
 	wallAnimationSet->loadAnimationSet("wall.fdset", dataGroupTypes);
 
@@ -120,6 +123,7 @@ Game::~Game()
 
 	delete heroAnimationSet;
 	delete globAnimationSet;
+	delete grobAnimationSet;
 	delete wallAnimationSet;
 	delete hero;
 
@@ -207,21 +211,30 @@ void Game::update()
 		{
 			if (enemiesToBuild == enemiesBuilt)
 			{
-				enemiesToBuild = enemiesToBuild * 2;
 				enemiesBuilt = 0;
-				enemyBuildTimer = 4;
+				enemyBuildTimer = 3;
 			}
 
 			enemyBuildTimer -= TimeController::timeController.dT;
-			if (enemyBuildTimer <= 0 && enemiesBuilt < enemiesToBuild && enemies.size() < 10)
+			if (enemyBuildTimer <= 0 && enemiesBuilt < enemiesToBuild && enemies.size() < 2)
 			{
-				Glob* enemy = new Glob(globAnimationSet);
+				LivingEntity* enemy = nullptr;
+				if (getRandomNumber(10) < 7)
+				{
+					enemy = new Glob(globAnimationSet);
+				}
+				else
+				{
+					enemy = new Grob(grobAnimationSet);
+				}
+
 				enemy->x = getRandomNumber(Globals::ScreenWidth - 96) + 32 + 16;
 				enemy->y = getRandomNumber(Globals::ScreenHeight - 96) + 32 + 16;
 				enemy->invincibleTimer = 0.1;
 
 				enemies.push_back(enemy);
 				Entity::entities.push_back(enemy);
+				enemiesBuilt++;
 			}
 		}
 

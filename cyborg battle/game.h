@@ -4,6 +4,7 @@
 #include "hero.h"
 #include "wall.h"
 #include "glob.h"
+#include "grob.h"
 #include "keyboardInput.h"
 #include "drawing_functions.h"
 #include "soundManager.h"
@@ -18,6 +19,7 @@ public:
 
 	AnimationSet* heroAnimationSet;
 	AnimationSet* globAnimationSet;
+	AnimationSet* grobAnimationSet;
 	AnimationSet* wallAnimationSet;
 
 	SDL_Texture* backgroundImage;
