@@ -212,11 +212,12 @@ void Game::update()
 			if (enemiesToBuild == enemiesBuilt)
 			{
 				enemiesBuilt = 0;
+				enemiesToBuild++;
 				enemyBuildTimer = 3;
 			}
 
 			enemyBuildTimer -= TimeController::timeController.dT;
-			if (enemyBuildTimer <= 0 && enemiesBuilt < enemiesToBuild && enemies.size() < 2)
+			if (enemyBuildTimer <= 0 && enemiesBuilt < enemiesToBuild && enemies.size() < 10)
 			{
 				LivingEntity* enemy = nullptr;
 				if (getRandomNumber(10) < 7)
@@ -271,7 +272,7 @@ void Game::draw()
 			{
 				SDL_Color color = { 255, 255, 255, 255 };
 				stringstream ss;
-				ss << "Enemies dispatched: " << Glob::globsKilled;
+				ss << "Enemies dispatched: " << (Glob::globsKilled + Grob::grobsKilled);
 
 				string resPath = getResourcePath();
 				scoreTexture = renderText(ss.str(), resPath + "vermin_vibes_1989.ttf", color, 30, Globals::renderer);

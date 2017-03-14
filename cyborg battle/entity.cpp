@@ -1,4 +1,5 @@
 #include "entity.h"
+#include <algorithm>
 
 
 void Entity::update()
@@ -61,7 +62,7 @@ void Entity::updateMovement()
 
 			if ( ! moving)
 			{
-				moveSpeed -= moveDistance;
+				moveSpeed = max((int)(moveSpeed - moveDistance * 2), 0);
 			}
 		}
 	}
